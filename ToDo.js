@@ -1,12 +1,12 @@
-import React from 'react'
+import React from "react";
 
-function Todo({todo}) {
+function Todo({ todo, clear }) {
   return (
-    <div>{`
-        ${todo.id} \t\t ${todo.name}`
-    }
+    <div>
+      {`
+        ${todo.id} - ${todo.name}`}
     </div>
-  )
+  );
 }
 
-export default Todo
+export default Todo;
