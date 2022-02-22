@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
-const Checkbox = ({ onClick, defaultChecked }) => (
-  <input type="checkbox" onClick={onClick} defaultChecked={defaultChecked} />
+const Checkbox = ({ onChange, defaultChecked }) => (
+  <input type="checkbox" onChange={onChange} defaultChecked={defaultChecked} />
 );
 
-export default Checkbox
+export default Checkbox;
