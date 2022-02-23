@@ -9,7 +9,6 @@ const getLocalItems = () => {
   if (list) {
     return JSON.parse(localStorage.getItem("lists"));
   } else {
-    return [];
   }
 };
 
@@ -24,7 +23,8 @@ function App() {
 
   const conRef = useRef();
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     let todo = { name: conRef.current.value, id: uid(), completed: false };
     let newTodos = [...toDos, todo];
     setToDos(newTodos);
@@ -43,10 +43,10 @@ function App() {
     setToDos(newTodo);
   };
 
+  
   const todoDel = (id) => {
     console.log(id);
-    const newTodos = [...toDos];
-    newTodos.splice(id, 1);
+    const newTodos = toDos.filter((ele) => id !== ele.id);
     setToDos(newTodos);
   };
 
